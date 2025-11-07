@@ -13,7 +13,39 @@
 # backend
 cd backend && npm i && npm run dev
 
+## **Repo layout**
 # frontend (new terminal)
 cd frontend && npm i && cp .env.example .env.local
 # fill DOMAIN, CLIENT_ID, AUDIENCE, API_BASE_URL=http://localhost:4000
 npm run dev
+
+cruise0-auth0-poc/
+├─ README.md
+├─ .gitignore
+├─ frontend/
+│  ├─ .env.example
+│  ├─ deploy.ps1
+│  ├─ index.html
+│  ├─ package.json
+│  ├─ vite.config.ts
+│  └─ src/
+│     ├─ main.tsx
+│     ├─ App.tsx
+│     ├─ api.ts
+│     ├─ auth.tsx
+│     ├─ assets/
+│     │  ├─ cruise-logo.png        (placeholder, replaceable)
+│     │  └─ cruise-bg.jpg          (placeholder, replaceable)
+│     └─ styles.css
+├─ backend/
+│  ├─ deploy.ps1
+│  ├─ package.json
+│  ├─ server.local.ts
+│  ├─ lambda.ts
+│  ├─ jwt.ts
+│  ├─ tsconfig.json
+│  └─ template.yaml                (AWS SAM: Lambda + HTTP API)
+└─ auth0/
+   ├─ universal-login.html
+   ├─ action-pre-user-registration.js
+   └─ action-post-login.js
